@@ -107,6 +107,9 @@ typedef std::function&lt; void(int32_t cd, const <a class="el" href="classContai
 <tr class="memitem:af578985ac1c6d98cf32df821a77c258f"><td class="memItemLeft" align="right" valign="top"><a id="af578985ac1c6d98cf32df821a77c258f"></a>
 typedef std::function&lt; void(int32_t cd, const <a class="el" href="classContainerId.html">ContainerId</a> &amp;id, int32_t status)&gt;&#160;</td><td class="memItemRight" valign="bottom"><b>ContainerStoppedFunc</b></td></tr>
 <tr class="separator:af578985ac1c6d98cf32df821a77c258f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65318e37c6367e6c676007dbcfec3ea4"><td class="memItemLeft" align="right" valign="top"><a id="a65318e37c6367e6c676007dbcfec3ea4"></a>
+typedef std::function&lt; void(int32_t cd, const <a class="el" href="classContainerId.html">ContainerId</a> &amp;id)&gt;&#160;</td><td class="memItemRight" valign="bottom"><b>ContainerHibernatedFunc</b></td></tr>
+<tr class="separator:a65318e37c6367e6c676007dbcfec3ea4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -146,9 +149,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a7ab07082f515abc77f157954747cad11"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDobbyManager.html#a7ab07082f515abc77f157954747cad11">ociConfigOfContainer</a> (int32_t cd) const</td></tr>
 <tr class="memdesc:a7ab07082f515abc77f157954747cad11"><td class="mdescLeft">&#160;</td><td class="mdescRight">Debugging method to allow you to retrieve the OCI config.json spec used to create the container.  <a href="classDobbyManager.html#a7ab07082f515abc77f157954747cad11">More...</a><br /></td></tr>
 <tr class="separator:a7ab07082f515abc77f157954747cad11"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab85026713da17b01da57903cc0be121f"><td class="memItemLeft" align="right" valign="top"><a id="ab85026713da17b01da57903cc0be121f"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>DobbyManager</b> (std::shared_ptr&lt; <a class="el" href="classDobbyEnv.html">DobbyEnv</a> &gt; &amp;, std::shared_ptr&lt; <a class="el" href="classDobbyUtils.html">DobbyUtils</a> &gt; &amp;, std::shared_ptr&lt; <a class="el" href="classDobbyIPCUtils.html">DobbyIPCUtils</a> &gt; &amp;, const std::shared_ptr&lt; const <a class="el" href="classIDobbySettings.html">IDobbySettings</a> &gt; &amp;, std::function&lt; void(int, const <a class="el" href="classContainerId.html">ContainerId</a> &amp;)&gt; &amp;StartedFunc, std::function&lt; void(int, const <a class="el" href="classContainerId.html">ContainerId</a> &amp;, int)&gt; &amp;StoppedFunc)</td></tr>
-<tr class="separator:ab85026713da17b01da57903cc0be121f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab510be63e23b9284301469b7fc10a1e"><td class="memItemLeft" align="right" valign="top"><a id="aab510be63e23b9284301469b7fc10a1e"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>DobbyManager</b> (std::shared_ptr&lt; <a class="el" href="classDobbyEnv.html">DobbyEnv</a> &gt; &amp;, std::shared_ptr&lt; <a class="el" href="classDobbyUtils.html">DobbyUtils</a> &gt; &amp;, std::shared_ptr&lt; <a class="el" href="classDobbyIPCUtils.html">DobbyIPCUtils</a> &gt; &amp;, const std::shared_ptr&lt; const <a class="el" href="classIDobbySettings.html">IDobbySettings</a> &gt; &amp;, std::function&lt; void(int, const <a class="el" href="classContainerId.html">ContainerId</a> &amp;)&gt; &amp;StartedFunc, std::function&lt; void(int, const <a class="el" href="classContainerId.html">ContainerId</a> &amp;, int)&gt; &amp;StoppedFunc, std::function&lt; void(int32_t cd, const <a class="el" href="classContainerId.html">ContainerId</a> &amp;id)&gt; containerHibernatedCb, std::function&lt; void(int32_t cd, const <a class="el" href="classContainerId.html">ContainerId</a> &amp;id)&gt; containerAwokenCb)</td></tr>
+<tr class="separator:aab510be63e23b9284301469b7fc10a1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a66e3c66c1edf14b1f292fb28004968d3"><td class="memItemLeft" align="right" valign="top"><a id="a66e3c66c1edf14b1f292fb28004968d3"></a>
 int32_t&#160;</td><td class="memItemRight" valign="bottom"><b>startContainerFromBundle</b> (const <a class="el" href="classContainerId.html">ContainerId</a> &amp;id, const std::string &amp;bundlePath, const std::list&lt; int &gt; &amp;files, const std::string &amp;command, const std::string &amp;displaySocket, const std::vector&lt; std::string &gt; &amp;envVars)</td></tr>
 <tr class="separator:a66e3c66c1edf14b1f292fb28004968d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -161,6 +164,12 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>pauseContainer</b> (i
 <tr class="memitem:a2d4e604d228f20045b2a4624d0295a30"><td class="memItemLeft" align="right" valign="top"><a id="a2d4e604d228f20045b2a4624d0295a30"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>resumeContainer</b> (int32_t cd)</td></tr>
 <tr class="separator:a2d4e604d228f20045b2a4624d0295a30"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac201b6ea9cc3aaae0c23b0dd13fc2ecc"><td class="memItemLeft" align="right" valign="top"><a id="ac201b6ea9cc3aaae0c23b0dd13fc2ecc"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>hibernateContainer</b> (int32_t cd, const std::string &amp;options)</td></tr>
+<tr class="separator:ac201b6ea9cc3aaae0c23b0dd13fc2ecc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61c23b8b21675ad8f377b62823a2fd46"><td class="memItemLeft" align="right" valign="top"><a id="a61c23b8b21675ad8f377b62823a2fd46"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>wakeupContainer</b> (int32_t cd)</td></tr>
+<tr class="separator:a61c23b8b21675ad8f377b62823a2fd46"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a26f396a3d1f2f145aa05ff23bfc50685"><td class="memItemLeft" align="right" valign="top"><a id="a26f396a3d1f2f145aa05ff23bfc50685"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>execInContainer</b> (int32_t cd, const std::string &amp;options, const std::string &amp;command)</td></tr>
 <tr class="separator:a26f396a3d1f2f145aa05ff23bfc50685"><td class="memSeparator" colspan="2">&#160;</td></tr>
