@@ -201,8 +201,8 @@ $(function() {
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;                                  <span class="keyword">const</span> std::shared_ptr&lt;const IDobbySettings&gt;&amp;,</div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;                                  std::function&lt;<span class="keywordtype">void</span>(<span class="keywordtype">int</span>, <span class="keyword">const</span> <a class="code" href="classContainerId.html">ContainerId</a>&amp;)&gt;&amp; StartedFunc,</div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;                                  std::function&lt;<span class="keywordtype">void</span>(<span class="keywordtype">int</span>, <span class="keyword">const</span> <a class="code" href="classContainerId.html">ContainerId</a>&amp;, <span class="keywordtype">int</span>)&gt;&amp; StoppedFunc,</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;                                  std::function&lt;<span class="keywordtype">void</span>(int32_t cd, <span class="keyword">const</span> <a class="code" href="classContainerId.html">ContainerId</a>&amp; <span class="keywordtype">id</span>)&gt; containerHibernatedCb,</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                                  std::function&lt;<span class="keywordtype">void</span>(int32_t cd, <span class="keyword">const</span> <a class="code" href="classContainerId.html">ContainerId</a>&amp; <span class="keywordtype">id</span>)&gt; containerAwokenCb);</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;                                  std::function&lt;<span class="keywordtype">void</span>(int32_t cd, <span class="keyword">const</span> <a class="code" href="classContainerId.html">ContainerId</a>&amp; <span class="keywordtype">id</span>)&gt;&amp; containerHibernatedCb,</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                                  std::function&lt;<span class="keywordtype">void</span>(int32_t cd, <span class="keyword">const</span> <a class="code" href="classContainerId.html">ContainerId</a>&amp; <span class="keywordtype">id</span>)&gt;&amp; containerAwokenCb);</div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    ~<a class="code" href="classDobbyManager.html">DobbyManager</a>();</div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160; </div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> setImpl(<a class="code" href="classDobbyManagerImpl.html">DobbyManagerImpl</a>* newImpl);</div>
@@ -240,10 +240,11 @@ $(function() {
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160; </div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    ContainerStartedFunc mContainerStartedCb;</div>
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    ContainerStoppedFunc mContainerStoppedCb;</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;};</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160; </div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// !defined(DOBBYMANAGER_H)</span></div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160; </div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160; </div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;};</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160; </div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// !defined(DOBBYMANAGER_H)</span></div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160; </div>
 <div class="ttc" id="aclassContainerId_html"><div class="ttname"><a href="classContainerId.html">ContainerId</a></div><div class="ttdoc">A wrapper around a std::string, used to add some type definition to to an id and also to sanity check...</div><div class="ttdef"><b>Definition:</b> ContainerId.h:33</div></div>
 <div class="ttc" id="aclassDobbyConfig_html"><div class="ttname"><a href="classDobbyConfig.html">DobbyConfig</a></div><div class="ttdoc">Interface that configuration file parser classes have to implement.</div><div class="ttdef"><b>Definition:</b> DobbyConfig.h:66</div></div>
 <div class="ttc" id="aclassDobbyContainer_html"><div class="ttname"><a href="classDobbyContainer.html">DobbyContainer</a></div><div class="ttdoc">Wrapper object used to store container resources.</div><div class="ttdef"><b>Definition:</b> DobbyContainer.h:59</div></div>
